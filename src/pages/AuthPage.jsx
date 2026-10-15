@@ -45,13 +45,13 @@ export default function AuthPage() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-4 py-10">
+    <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-3 py-5 sm:px-4 sm:py-10">
       <div className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-ink/10">
-        <div className="border-b-4 border-sun bg-teal-dark px-6 py-5 text-white">
+        <div className="border-b-4 border-sun bg-teal-dark px-4 py-4 text-white sm:px-6 sm:py-5">
           <h1 className="font-display text-2xl font-extrabold">Smart Oshxona</h1>
           <p className="text-sm text-white/70">Maktab oshxonasi: oldindan buyurtma bering, navbatda turmang.</p>
         </div>
-        <form onSubmit={submit} className="space-y-3 p-6">
+        <form onSubmit={submit} className="space-y-3 p-4 sm:p-6">
           <h2 className="font-display text-xl font-bold">{mode === 'login' ? 'Kirish' : "Ro'yxatdan o'tish"}</h2>
           {err && <ErrorBox message={err} />}
           {success && <p className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900" role="status">{success}</p>}
@@ -59,7 +59,7 @@ export default function AuthPage() {
             <>
               <fieldset className="grid grid-cols-2 gap-2">
                 {[['student', "O'quvchi"], ['cook', 'Oshpaz (tasdiq bilan)']].map(([v, l]) => (
-                  <label key={v} className={`cursor-pointer rounded-lg px-3 py-2 text-center text-sm font-semibold ring-1 ${f.role === v ? 'bg-teal text-white ring-teal' : 'ring-ink/15'}`}>
+                  <label key={v} className={`flex min-h-11 cursor-pointer items-center justify-center rounded-lg px-2 py-2 text-center text-xs font-semibold leading-tight ring-1 sm:px-3 sm:text-sm ${f.role === v ? 'bg-teal text-white ring-teal' : 'ring-ink/15'}`}>
                     <input type="radio" className="sr-only" name="role" checked={f.role === v} onChange={() => setF((p) => ({ ...p, role: v }))} />{l}
                   </label>
                 ))}

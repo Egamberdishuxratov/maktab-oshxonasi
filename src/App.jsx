@@ -45,7 +45,7 @@ function Main({ profile, onLogout }) {
   return (
     <>
       <Header profile={profile} page={current} setPage={go} cartCount={cartCount} onLogout={onLogout} />
-      <main className="mx-auto max-w-5xl px-4 py-6">
+      <main className="mx-auto min-w-0 max-w-5xl px-3 py-4 sm:px-4 sm:py-6">
         {current === 'catalog' && <CatalogPage cart={cart} onAdd={add} onOpen={(id) => { setDishId(id); go('detail') }} />}
         {current === 'detail' && <DishDetailPage dishId={dishId} cart={cart} setQty={setQty} onBack={() => go('catalog')} />}
         {current === 'cart' && <CartPage cart={cart} setQty={setQty} onBrowse={() => go('catalog')} onDone={() => { setCart({}); setPage('orders'); setNotice("Buyurtma yuborildi! Holatini shu yerda kuzatishingiz mumkin.") }} />}

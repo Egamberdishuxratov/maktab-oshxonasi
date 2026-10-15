@@ -26,9 +26,9 @@ export default function OrderCard({ order, showCustomer, children }) {
 
       <ul className="mt-3 divide-y divide-ink/10 text-sm">
         {items.map((i) => (
-          <li key={i.id} className="flex justify-between py-1.5">
-            <span>{i.dish_name} × {i.qty}</span>
-            <span className="tabular-nums">{money(i.unit_price * i.qty)}</span>
+          <li key={i.id} className="flex min-w-0 items-start justify-between gap-2 py-1.5">
+            <span className="min-w-0 break-words">{i.dish_name} × {i.qty}</span>
+            <span className="shrink-0 tabular-nums">{money(i.unit_price * i.qty)}</span>
           </li>
         ))}
       </ul>

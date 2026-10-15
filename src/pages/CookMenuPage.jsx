@@ -33,13 +33,13 @@ export default function CookMenuPage({ isHeadChef = false }) {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="font-display text-2xl font-bold">{isHeadChef ? 'Oshxona menyusi' : 'Mening menyum'}</h1>
-        <button className={BTN.primary} onClick={() => setEditing(null)}>+ Taom qo'shish</button>
+        <button className={`${BTN.primary} self-start sm:self-auto`} onClick={() => setEditing(null)}>+ Taom qo'shish</button>
       </div>
-      <div className="flex flex-wrap gap-3">
-        <input className={`${INPUT} max-w-xs`} placeholder="Nom bo'yicha qidirish" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Qidiruv" />
-        <div className="flex gap-1">
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <input className={`${INPUT} w-full sm:max-w-xs`} placeholder="Nom bo'yicha qidirish" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Qidiruv" />
+        <div className="flex flex-wrap gap-1">
           {AVAIL.map(([v, l]) => <button key={v} onClick={() => setAvail(v)} className={`rounded-lg px-3 py-2 text-sm font-semibold ${avail === v ? 'bg-teal text-white' : 'bg-white ring-1 ring-ink/15'}`}>{l}</button>)}
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function CookMenuPage({ isHeadChef = false }) {
                 <p className="font-semibold">{d.name} {!d.is_active && <span className="text-xs text-ink/50">(yashirin)</span>}</p>
                 <p className="text-sm text-ink/60">{money(d.price)} · {d.stock > 0 ? `qoldi: ${d.stock}` : 'tugagan'}</p>
               </div>
-              <div className="flex gap-1.5">
+              <div className="flex flex-wrap gap-1.5">
                 <button className={BTN.ghost} onClick={() => toggle(d)}>{d.is_active ? 'Yashirish' : "Ko'rsatish"}</button>
                 <button className={BTN.ghost} onClick={() => setEditing(d)}>Tahrirlash</button>
                 <button className={BTN.ghost} onClick={() => remove(d)}>O'chirish</button>

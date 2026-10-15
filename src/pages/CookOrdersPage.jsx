@@ -16,7 +16,7 @@ export default function CookOrdersPage() {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-baseline justify-between">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
         <h1 className="font-display text-2xl font-bold">Kelgan buyurtmalar</h1>
         <p className="text-sm text-ink/60">Faol buyurtmalar: <b>{activeCount}</b></p>
       </div>

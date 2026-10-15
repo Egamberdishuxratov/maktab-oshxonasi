@@ -17,10 +17,10 @@ export default function CatalogPage({ cart, onAdd, onOpen }) {
 
   return (
     <section className="space-y-4">
-      <div className="rounded-lg border-b-4 border-sun bg-teal-dark px-5 py-4 text-white"><p className="text-sm text-white/70">{today}</p><h1 className="font-display text-2xl font-extrabold">Bugungi menyu</h1><p className="text-sm text-white/70">Tanaffusdan oldin tanlang, tayyor bo'lganda olib keting.</p></div>
-      <div className="flex flex-wrap gap-3">
-        <input className={`${INPUT} max-w-xs`} placeholder="Taom nomini qidiring" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Qidiruv" />
-        <div className="flex gap-1">
+      <div className="rounded-lg border-b-4 border-sun bg-teal-dark px-4 py-4 text-white sm:px-5"><p className="text-sm text-white/70">{today}</p><h1 className="font-display text-2xl font-extrabold">Bugungi menyu</h1><p className="text-sm text-white/70">Tanaffusdan oldin tanlang, tayyor bo'lganda olib keting.</p></div>
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <input className={`${INPUT} w-full sm:max-w-xs`} placeholder="Taom nomini qidiring" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Qidiruv" />
+        <div className="flex flex-wrap gap-1">
           {CATS.map(([v, l]) => (
             <button key={v} onClick={() => setCat(v)} className={`rounded-lg px-3 py-2 text-sm font-semibold ${cat === v ? 'bg-teal text-white' : 'bg-white ring-1 ring-ink/15'}`}>{l}</button>
           ))}

@@ -37,7 +37,7 @@ export default function DishFormModal({ dish, onClose, onSaved }) {
         <h2 className="font-display text-xl font-bold">{dish ? 'Taomni tahrirlash' : "Yangi taom qo'shish"}</h2>
         {err && <ErrorBox message={err} />}
         <label className="block text-sm font-semibold">Nomi<input className={INPUT} value={f.name} onChange={set('name')} /></label>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <label className="block text-sm font-semibold">Kategoriya
             <select className={INPUT} value={f.category} onChange={set('category')}>
               <option value="ovqat">Ovqat</option><option value="ichimlik">Ichimlik</option>
@@ -50,7 +50,7 @@ export default function DishFormModal({ dish, onClose, onSaved }) {
         <label className="block text-sm font-semibold">Tarkibi<textarea rows="2" className={INPUT} value={f.ingredients} onChange={set('ingredients')} /></label>
         <label className="block text-sm font-semibold">Rasm havolasi (URL)<input className={INPUT} placeholder="https://..." value={f.image_url} onChange={set('image_url')} /></label>
         <label className="block text-sm font-semibold">Rasm bo'lmasa belgi (emoji)<input className={INPUT} placeholder="🍲" value={f.emoji} onChange={set('emoji')} /></label>
-        <div className="flex justify-end gap-2 pt-2">
+        <div className="flex flex-col-reverse gap-2 pt-2 sm:flex-row sm:justify-end">
           <button type="button" onClick={onClose} className={BTN.ghost}>Bekor qilish</button>
           <button disabled={saving} className={BTN.primary}>{saving ? 'Saqlanmoqda...' : 'Saqlash'}</button>
         </div>
