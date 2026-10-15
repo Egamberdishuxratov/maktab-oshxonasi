@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@theme {
+  --color-mint: #f2f6fb;       /* daftar qog'ozi */
+  --color-ink: #1b2a2f;
+  --color-teal: #1f5c4d;       /* maktab doskasi */
+  --color-teal-dark: #163f35;
+  --color-sun: #f5c518;        /* qalam sarig'i */
+  --color-tomato: #d64541;     /* olma qizili */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Figtree", system-ui, sans-serif;
+}
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background-color: #f7f8f2;
+  background-image:
+    radial-gradient(ellipse at 8% 10%, rgb(31 92 77 / 10%), transparent 32rem),
+    radial-gradient(ellipse at 92% 32%, rgb(245 197 24 / 12%), transparent 28rem),
+    radial-gradient(ellipse at 48% 100%, rgb(31 92 77 / 6%), transparent 34rem),
+    radial-gradient(#b9c9b9 0.7px, transparent 0.7px);
+  background-size: auto, auto, auto, 22px 22px;
+  background-attachment: fixed;
+}
+:focus-visible { outline: 2px solid var(--color-teal); outline-offset: 2px; }
